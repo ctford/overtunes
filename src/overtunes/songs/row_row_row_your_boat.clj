@@ -27,9 +27,6 @@
         times (reductions + 0 durations)]
     (map vector times pitches)))
 
-(note :C3)
-
-
 (defn play [metro notes] 
   (let [play-note (fn [[beat pitch]] (at (metro beat) (-> pitch note midi->hz harpsichord)))]
     (dorun (map play-note notes)))) 
